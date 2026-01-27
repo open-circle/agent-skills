@@ -1,0 +1,33 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Validate skill structure
+        run: |
+          # Check that all skills have required SKILL.md
+          for skill_dir in skills/*/; do
+            if [ -d "$skill_dir" ]; then
+              skill_name=$(basename "$skill_dir")
+              if [ ! -f "${skill_dir}SKILL.md" ]; then
+                echo "Error: Missing SKILL.md in $skill_dir"
+                exit 1
+              fi
+              echo "✓ $skill_name has SKILL.md"
+            fi
+          done
+          echo "All skills validated successfully!"

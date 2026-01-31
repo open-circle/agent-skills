@@ -4,7 +4,7 @@ description: Form handling with Formisch, the type-safe form library for modern 
 license: MIT
 metadata:
   author: open-circle
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Formisch Usage
@@ -106,6 +106,7 @@ Each field has its own reactive store with:
 - `isDirty` — Field value differs from initial value
 - `isValid` — Field passes validation
 - `props` — Props to spread onto input elements
+- `onChange` (React) / `onInput` (other frameworks) — Sets the field input value programmatically. Use this when the field cannot be connected to a native HTML element.
 
 ### Dirty Tracking
 
@@ -810,6 +811,30 @@ function EmailInput({ form }) {
 
 - **`Field` component** — Multiple fields in the same component
 - **`useField` hook** — Single field with component logic access
+
+## Using Component Libraries
+
+When using component libraries that don't expose their underlying native HTML elements, you cannot spread `field.props` directly. Instead, use `field.onChange` (React) or `field.onInput` (other frameworks) to update the value programmatically:
+
+```tsx
+import { DatePicker } from "some-component-library";
+
+<Field of={form} path={["date"]}>
+  {(field) => (
+    <DatePicker
+      value={field.input}
+      onChange={(newDate) => field.onChange(newDate)}
+    />
+  )}
+</Field>;
+```
+
+The `field.onChange` method updates the field value and triggers validation, just like a native input would.
+
+This is useful for:
+
+- **Component libraries** that wrap native elements without exposing them
+- **Complex custom inputs** like date pickers, rich text editors, or color pickers
 
 ## Async Submission
 

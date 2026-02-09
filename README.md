@@ -28,11 +28,7 @@ These skills provide rules for:
 * Defining and validating schemas with Valibot
 * Handling form state and transitions with Formisch
 
-Without these skills:
-
-* Schema structure is undefined
-* Form behavior is not standardized
-* Agent output is inconsistent
+Without these skills, schema validation and form handling rely on custom solutions, which may introduce inconsistency across projects.
 
 ## When to Use These
 

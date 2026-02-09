@@ -37,11 +37,10 @@ Without these skills:
 
 ## When to Use These
 
-Use these when:
+Use these skills if your agent system needs to:
 
-* Building agents that generate, validate, or reason about structured data or forms
-* Using or evaluating Valibot or Formisch in agent workflows
-* You want rules for how schema and form logic is applied by the agent
+- Generate, validate, or reason about structured data
+- Handle multi-step or stateful form workflows
 
 This requires an agent runtime that loads instructions from `SKILL.md` files.
 

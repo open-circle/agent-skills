@@ -42,8 +42,6 @@ Use these skills if your agent system needs to:
 - Generate, validate, or reason about structured data
 - Handle multi-step or stateful form workflows
 
-This requires an agent runtime that loads instructions from `SKILL.md` files.
-
 ## Skills included
 
 | Skill             | Purpose                          | When to use                                              |
@@ -52,6 +50,8 @@ This requires an agent runtime that loads instructions from `SKILL.md` files.
 | [formisch-usage](skills/formisch-usage/)| Form state handling              | Managing multi-step forms or structured data collection  |
 
 ## Installation
+
+>**This requires an agent runtime that loads instructions from `SKILL.md` files.**
 
 Install the skills using the CLI:
 ```bash

@@ -28,7 +28,7 @@ These skills provide rules for:
 * Defining and validating schemas with Valibot
 * Handling form state and transitions with Formisch
 
-Without these skills, teams typically reimplement validation logic and error handling differently across projects, leading to fragmentation and inconsistency.
+Without these skills, validation logic and error handling are typically reimplemented differently across projects, leading to fragmentation and inconsistency.
 
 ## When to Use These
 

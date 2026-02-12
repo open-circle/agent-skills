@@ -1,12 +1,13 @@
 # Open Circle Agent Skills
 
-A collection of [Agent Skills](https://agentskills.io) for [Open Circle](https://opencircle.dev) projects. These skills help AI agents define how schema definitions, validation logic, and form behavior are handled with Valibot and Formisch.
+Teach AI agents how to use [Valibot](https://valibot.dev) and [Formisch](https://formisch.dev/).
 
 ## Contents
 
 - [What are Agent Skills?](#what-are-agent-skills)
 - [What These Skills Do](#what-these-skills-do)
 - [When to Use These](#when-to-use-these)
+- [Examples](#examples)
 - [Skills Included](#skills-included)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -25,8 +26,8 @@ Learn more at [agentskills.io](https://agentskills.io)
 
 These skills provide rules for:
 
-* Defining and validating schemas with Valibot
-* Handling form state and transitions with Formisch
+- Defining and validating schemas with Valibot
+- Handling form state and transitions with Formisch
 
 Without these skills, validation logic and error handling are typically reimplemented differently across projects, leading to fragmentation and inconsistency.
 
@@ -37,18 +38,87 @@ Use these skills if your agent system needs to:
 - Generate, validate, or reason about structured data
 - Handle multi-step or stateful form workflows
 
+## Examples
+
+### Valibot Schema
+
+```typescript
+import * as v from "valibot";
+
+const UserSchema = v.object({
+  name: v.pipe(v.string(), v.nonEmpty("Please enter your name.")),
+  email: v.pipe(
+    v.string(),
+    v.nonEmpty("Please enter your email."),
+    v.email("The email address is badly formatted."),
+  ),
+  age: v.pipe(v.number(), v.minValue(13, "You must be at least 13 years old.")),
+});
+
+const result = v.safeParse(UserSchema, data);
+if (result.success) {
+  console.log(result.output); // { name: string, email: string, age: number }
+} else {
+  console.log(result.issues);
+}
+```
+
+### Formisch Form (React)
+
+```tsx
+import { Field, Form, useForm } from "@formisch/react";
+import type { SubmitHandler } from "@formisch/react";
+import * as v from "valibot";
+
+const LoginSchema = v.object({
+  email: v.pipe(v.string(), v.email()),
+  password: v.pipe(v.string(), v.minLength(8)),
+});
+
+export default function LoginPage() {
+  const loginForm = useForm({ schema: LoginSchema });
+
+  const handleSubmit: SubmitHandler<typeof LoginSchema> = (output) => {
+    console.log(output); // { email: string, password: string }
+  };
+
+  return (
+    <Form of={loginForm} onSubmit={handleSubmit}>
+      <Field of={loginForm} path={["email"]}>
+        {(field) => (
+          <div>
+            <input {...field.props} value={field.input} type="email" />
+            {field.errors && <div>{field.errors[0]}</div>}
+          </div>
+        )}
+      </Field>
+      <Field of={loginForm} path={["password"]}>
+        {(field) => (
+          <div>
+            <input {...field.props} value={field.input} type="password" />
+            {field.errors && <div>{field.errors[0]}</div>}
+          </div>
+        )}
+      </Field>
+      <button type="submit">Login</button>
+    </Form>
+  );
+}
+```
+
 ## Skills included
 
-| Skill             | Purpose                          | When to use                                              |
-| ----------------- | -------------------------------- | -------------------------------------------------------- |
-| [valibot-usage](skills/valibot-usage/)  | Schema definition and validation | Validating data structures, API responses, or user input |
-| [formisch-usage](skills/formisch-usage/)| Form state handling              | Managing multi-step forms or structured data collection  |
+| Skill                                    | Purpose                          | When to use                                              |
+| ---------------------------------------- | -------------------------------- | -------------------------------------------------------- |
+| [valibot-usage](skills/valibot-usage/)   | Schema definition and validation | Validating data structures, API responses, or user input |
+| [formisch-usage](skills/formisch-usage/) | Form state handling              | Managing multi-step forms or structured data collection  |
 
 ## Installation
 
->**This requires an agent runtime that loads instructions from `SKILL.md` files.**
+> **This requires an agent runtime that loads instructions from `SKILL.md` files.**
 
 Install the skills using the CLI:
+
 ```bash
 npx skills add open-circle/agent-skills
 npx add-skill open-circle/agent-skills
@@ -61,10 +131,9 @@ Or copy individual skill folders into your project's `.skills/` directory.
 1. The agent loads all available skills at startup.
 2. Instructions are read from each `SKILL.md` file.
 3. The agent applies these rules during:
-
-   * Schema definition
-   * Validation
-   * Form handling
+   - Schema definition
+   - Validation
+   - Form handling
 
 No prompt changes are required.
 

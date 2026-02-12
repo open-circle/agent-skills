@@ -106,7 +106,7 @@ export default function LoginPage() {
 }
 ```
 
-## Skills included
+## Skills Included
 
 | Skill                                    | Purpose                          | When to use                                              |
 | ---------------------------------------- | -------------------------------- | -------------------------------------------------------- |
@@ -137,7 +137,7 @@ Or copy individual skill folders into your project's `.skills/` directory.
 
 No prompt changes are required.
 
-## Skill structure
+## Skill Structure
 
 Each skill folder contains:
 

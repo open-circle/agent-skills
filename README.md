@@ -24,19 +24,14 @@ Learn more at [agentskills.io](https://agentskills.io)
 
 ## What These Skills Do
 
-These skills provide rules for:
-
-- Defining and validating schemas with Valibot
-- Handling form state and transitions with Formisch
-
-Without these skills, validation logic and error handling are typically reimplemented differently across projects, leading to fragmentation and inconsistency.
+These skills teach agents the correct patterns and best practices for using Valibot and Formisch.
 
 ## When to Use These
 
 Use these skills if your agent system needs to:
 
-- Generate, validate, or reason about structured data
-- Handle multi-step or stateful form workflows
+- Generate, validate, or reason about structured data with Valibot 
+- Handle multi-step or stateful form workflows with Formisch 
 
 ## Examples
 
@@ -115,7 +110,7 @@ export default function LoginPage() {
 
 ## Installation
 
-> **This requires an agent runtime that loads instructions from `SKILL.md` files.**
+> **Compatible with agents that support Agent Skills**
 
 Install the skills using the CLI:
 
@@ -128,14 +123,8 @@ Or copy individual skill folders into your project's `.skills/` directory.
 
 ## Usage
 
-1. The agent loads all available skills at startup.
-2. Instructions are read from each `SKILL.md` file.
-3. The agent applies these rules during:
-   - Schema definition
-   - Validation
-   - Form handling
+Activation behavior varies by agent. Check if your agent supports Agent Skills and refer to its documentation.
 
-No prompt changes are required.
 
 ## Skill Structure
 

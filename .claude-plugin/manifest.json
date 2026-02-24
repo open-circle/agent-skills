@@ -5,5 +5,5 @@
   "author": "Open Circle",
   "homepage": "https://opencircle.dev",
   "repository": "https://github.com/open-circle/agent-skills",
-  "skills": ["skills/valibot-usage", "skills/formisch-usage"]
+  "skills": ["skills/valibot", "skills/formisch-usage"]
 }

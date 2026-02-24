@@ -105,7 +105,7 @@ export default function LoginPage() {
 
 | Skill                                    | Purpose                          | When to use                                              |
 | ---------------------------------------- | -------------------------------- | -------------------------------------------------------- |
-| [valibot-usage](skills/valibot-usage/)   | Schema definition and validation | Validating data structures, API responses, or user input |
+| [valibot](skills/valibot/)   | Schema definition and validation | Validating data structures, API responses, or user input |
 | [formisch-usage](skills/formisch-usage/) | Form state handling              | Managing multi-step forms or structured data collection  |
 
 ## Installation

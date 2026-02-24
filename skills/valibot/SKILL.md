@@ -1,5 +1,5 @@
 ---
-name: valibot-usage
+name: valibot
 description: Schema validation with Valibot, the modular and type-safe schema library. Use when the user needs to validate data, create schemas, parse inputs, or work with Valibot in their project. Also use when migrating from Zod to Valibot.
 license: MIT
 metadata:

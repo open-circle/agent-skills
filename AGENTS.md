@@ -5,7 +5,7 @@ This repository contains Agent Skills for Open Circle projects. Skills help AI a
 ## Available Skills
 
 - **valibot** — Schema validation with Valibot
-- **formisch-usage** — Form handling with Formisch
+- **formisch** — Form handling with Formisch
 
 ## How to Use
 

@@ -7,7 +7,7 @@ metadata:
   version: "1.0"
 ---
 
-# Valibot Usage
+# Valibot
 
 This skill helps you work effectively with [Valibot](https://valibot.dev), the modular and type-safe schema library for validating structural data.
 

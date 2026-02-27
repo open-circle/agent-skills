@@ -1,5 +1,5 @@
 ---
-name: formisch-usage
+name: formisch
 description: Form handling with Formisch, the type-safe form library for modern frameworks. Use when the user needs to create forms, handle form state, validate form inputs, or work with Formisch.
 license: MIT
 metadata:
@@ -7,7 +7,7 @@ metadata:
   version: "1.1"
 ---
 
-# Formisch Usage
+# Formisch
 
 This skill helps AI agents work effectively with [Formisch](https://formisch.dev/), the schema-based, headless form library for modern frameworks.
 

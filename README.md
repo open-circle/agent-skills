@@ -30,8 +30,8 @@ These skills teach agents the correct patterns and best practices for using Vali
 
 Use these skills if your agent system needs to:
 
-- Generate, validate, or reason about structured data with Valibot 
-- Handle multi-step or stateful form workflows with Formisch 
+- Generate, validate, or reason about structured data with Valibot
+- Handle multi-step or stateful form workflows with Formisch
 
 ## Examples
 
@@ -103,10 +103,10 @@ export default function LoginPage() {
 
 ## Skills Included
 
-| Skill                                    | Purpose                          | When to use                                              |
-| ---------------------------------------- | -------------------------------- | -------------------------------------------------------- |
-| [valibot-usage](skills/valibot-usage/)   | Schema definition and validation | Validating data structures, API responses, or user input |
-| [formisch-usage](skills/formisch-usage/) | Form state handling              | Managing multi-step forms or structured data collection  |
+| Skill                        | Purpose                          | When to use                                              |
+| ---------------------------- | -------------------------------- | -------------------------------------------------------- |
+| [valibot](skills/valibot/)   | Schema definition and validation | Validating data structures, API responses, or user input |
+| [formisch](skills/formisch/) | Form state handling              | Managing multi-step forms or structured data collection  |
 
 ## Installation
 
@@ -116,7 +116,6 @@ Install the skills using the CLI:
 
 ```bash
 npx skills add open-circle/agent-skills
-npx add-skill open-circle/agent-skills
 ```
 
 Or copy individual skill folders into your project's `.skills/` directory.
@@ -124,7 +123,6 @@ Or copy individual skill folders into your project's `.skills/` directory.
 ## Usage
 
 Activation behavior varies by agent. Check if your agent supports Agent Skills and refer to its documentation.
-
 
 ## Skill Structure
 

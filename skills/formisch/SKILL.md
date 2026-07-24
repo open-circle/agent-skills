@@ -314,9 +314,9 @@ const LoginSchema = v.object({
 });
 
 export default component$(() => {
-  const loginForm = useForm$({
+  const loginForm = useForm$(() => ({
     schema: LoginSchema,
-  });
+  }));
 
   return (
     <Form of={loginForm} onSubmit$={(output) => console.log(output)}>
@@ -367,6 +367,8 @@ const form = useForm({
   revalidate: "input",
 });
 ```
+
+In Qwik, `useForm$` must receive a function that returns the config, e.g. `useForm$(() => ({ schema: MySchema }))`. This allows Qwik to convert the config into a QRL.
 
 ## Field Paths
 

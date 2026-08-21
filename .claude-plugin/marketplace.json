@@ -1,0 +1,41 @@
+{
+  "name": "open-circle",
+  "owner": {
+    "name": "Open Circle",
+    "url": "https://github.com/open-circle"
+  },
+  "metadata": {
+    "description": "Agent Skills for Open Circle projects including Valibot and Formisch",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "valibot",
+      "source": "./skills/valibot",
+      "description": "Schema validation with Valibot, the modular and type-safe schema library",
+      "version": "1.0.0",
+      "author": {
+        "name": "Open Circle",
+        "url": "https://github.com/open-circle"
+      },
+      "homepage": "https://valibot.dev",
+      "repository": "https://github.com/open-circle/agent-skills",
+      "license": "MIT",
+      "keywords": ["valibot", "schema", "validation", "typescript"]
+    },
+    {
+      "name": "formisch",
+      "source": "./skills/formisch",
+      "description": "Form validation with Formisch, the schema-based, headless form library",
+      "version": "1.0.0",
+      "author": {
+        "name": "Open Circle",
+        "url": "https://github.com/open-circle"
+      },
+      "homepage": "https://formisch.dev",
+      "repository": "https://github.com/open-circle/agent-skills",
+      "license": "MIT",
+      "keywords": ["formisch", "forms", "validation", "typescript"]
+    }
+  ]
+}

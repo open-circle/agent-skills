@@ -1,0 +1,13 @@
+{
+  "name": "formisch",
+  "description": "Form validation with Formisch, the schema-based, headless form library",
+  "version": "1.0.0",
+  "author": {
+    "name": "Open Circle",
+    "url": "https://github.com/open-circle"
+  },
+  "homepage": "https://formisch.dev",
+  "repository": "https://github.com/open-circle/agent-skills",
+  "license": "MIT",
+  "keywords": ["formisch", "forms", "validation", "typescript"]
+}

@@ -1,11 +1,25 @@
-# Claude Plugin
+# Claude Code Marketplace
 
-This directory contains configuration for the Claude plugin marketplace.
+This directory contains the plugin marketplace configuration for Claude Code.
 
 ## Files
 
-- `manifest.json` — Plugin metadata and skill references
+- `marketplace.json` — Marketplace catalog listing the `valibot` and `formisch` plugins
+
+Each plugin points to its skill folder in `skills/`, which contains its own `.claude-plugin/plugin.json` manifest next to the `SKILL.md` file.
 
 ## Usage
 
-When this repository is published to the Claude plugin marketplace, users can install the skills directly in Claude.
+```bash
+/plugin marketplace add open-circle/agent-skills
+/plugin install valibot@open-circle
+/plugin install formisch@open-circle
+```
+
+## Validation
+
+```bash
+claude plugin validate .
+claude plugin validate ./skills/valibot
+claude plugin validate ./skills/formisch
+```

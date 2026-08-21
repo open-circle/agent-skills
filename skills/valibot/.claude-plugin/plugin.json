@@ -1,0 +1,13 @@
+{
+  "name": "valibot",
+  "description": "Schema validation with Valibot, the modular and type-safe schema library",
+  "version": "1.0.0",
+  "author": {
+    "name": "Open Circle",
+    "url": "https://github.com/open-circle"
+  },
+  "homepage": "https://valibot.dev",
+  "repository": "https://github.com/open-circle/agent-skills",
+  "license": "MIT",
+  "keywords": ["valibot", "schema", "validation", "typescript"]
+}

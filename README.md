@@ -112,6 +112,18 @@ export default function LoginPage() {
 
 > **Compatible with agents that support Agent Skills**
 
+### Claude Code
+
+Add this repository as a plugin marketplace and install the skills you need:
+
+```bash
+/plugin marketplace add open-circle/agent-skills
+/plugin install valibot@open-circle
+/plugin install formisch@open-circle
+```
+
+### Other agents
+
 Install the skills using the CLI:
 
 ```bash

@@ -4,7 +4,7 @@ description: Form handling with Formisch, the schema-first and type-safe form li
 license: MIT
 metadata:
   author: open-circle
-  version: "1.4"
+  version: "1.5"
 ---
 
 # Formisch
@@ -41,6 +41,8 @@ Formisch is a schema-based, headless form library that works across multiple fra
 | SolidJS      | `@formisch/solid`        | `createForm`   |
 | Svelte       | `@formisch/svelte`       | `createForm`   |
 | Vue          | `@formisch/vue`          | `useForm`      |
+
+Experimental SolidJS 2 support is available through the `@formisch/solid/v2` entry point of `@formisch/solid` (v1.2.0 or later). It requires `solid-js` and `@solidjs/web` v2. The default `@formisch/solid` entry point targets SolidJS 1.
 
 ## Installation
 
